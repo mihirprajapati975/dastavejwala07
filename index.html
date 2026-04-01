@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mihir Prajapati - Notary Services | Himmatnagar</title>
+    <meta name="description" content="Notary, Affidavit, Dastavej services by Mihir Prajapati under Advocate Amit Prajapati. Fast certified documents in Himmatnagar, Sabarkantha 383001.">
+    <meta name="keywords" content="notary himmatnagar, affidavit sabarkantha, dastavej, mihir prajapati, amit prajapati, notary services">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333; }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white; padding: 1rem 0; position: fixed; width: 100%; top: 0;
+            z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        nav { display: flex; justify-content: space-between; align-items: center;
+            max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+        }
+        .logo { font-size: 1.6rem; font-weight: 700; color: #ffd700;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: #ffd700; }
+        .mobile-menu { display: none; font-size: 1.5rem; cursor: pointer; color: white; }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(30,60,114,0.95), rgba(42,82,152,0.95)),
+            url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23e3f2fd" width="1200" height="600"/><path fill="%231e3c72" opacity="0.3" d="M0 300Q300 100 600 300T1200 300V600H0z"/></svg>');
+            background-size: cover; height: 100vh; display: flex; align-items: center;
+            justify-content: center; text-align: center; color: white; margin-top: 80px;
+        }
+        .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; animation: fadeInUp 1s ease;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .hero-content .subtitle { font-size: 1.3rem; margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        .cta-button { display: inline-block; background: #ffd700; color: #1e3c72;
+            padding: 18px 45px; text-decoration: none; border-radius: 50px;
+            font-weight: 600; font-size: 1.2rem; transition: all 0.3s;
+            animation: fadeInUp 1s ease 0.4s both; box-shadow: 0 5px 15px rgba(255,215,0,0.4);
+        }
+        .cta-button:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(255,215,0,0.6); }
+
+        /* Services */
+        .services { padding: 100px 0; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem;
+            color: #1e3c72; position: relative;
+        }
+        .section-title::after { content: ''; width: 80px; height: 4px; background: #ffd700;
+            position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+        }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .service-card { background: white; padding: 2.5rem; border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; transition: all 0.3s;
+            border-top: 4px solid #ffd700;
+        }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+        .service-icon { font-size: 3rem; color: #ffd700; margin-bottom: 1rem; }
+        .service-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #1e3c72; }
+
+        /* About */
+        .about { background: #f8f9fa; padding: 100px 0; }
+        .about-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+        }
+        .about-text h2 { font-size: 2.5rem; color: #1e3c72; margin-bottom: 1.5rem; }
+        .about-text p { font-size: 1.1rem; margin-bottom: 1.5rem; color: #666; }
+        .team-card { background: white; padding: 2.5rem; border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center;
+        }
+        .team-name { font-size: 1.8rem; color: #1e3c72; font-weight: 700; margin-bottom: 0.5rem; }
+        .team-role { color: #ffd700; font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; }
+
+        /* Contact */
+        .contact { padding: 100px 0; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; }
+        .contact-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; text-align: center; }
+        .contact h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .contact-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem; margin: 3rem 0;
+        }
+        .contact-item { display: flex; align-items: center; gap: 1rem;
+            background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px;
+        }
+        .contact-item i { font-size: 2rem; color: #ffd700; width: 50px; }
+        .contact-item h4 { color: #ffd700; margin-bottom: 0.5rem; }
+        .contact-form { max-width: 600px; margin: 3rem auto 0; }
+        .form-group { margin-bottom: 1.5rem; text-align: left; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%; padding: 15px; border: none; border-radius: 10px; font-size: 1rem;
+            background: rgba(255,255,255,0.9);
+        }
+        .form-group textarea { height: 120px; resize: vertical; }
+        .submit-btn { background: #ffd700; color: #1e3c72; padding: 15px 40px; border: none;
+            border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer;
+            transition: all 0.3s; width: 100%;
+        }
+        .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(255,215,0,0.4); }
+
+        /* WhatsApp */
+        .whatsapp-btn { position: fixed; bottom: 20px; right: 20px; background: #25D366;
+            color: white; width: 60px; height: 60px; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; font-size: 1.8rem;
+            box-shadow: 0 4px 15px rgba(37,211,102,0.4); z-index: 1001;
+            text-decoration: none; animation: pulse 2s infinite;
+        }
+
+        /* Footer */
+        footer { background: #1a1a1a; color: white; text-align: center; padding: 2rem 0; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu { display: block; }
+            .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%;
+                background: rgba(30,60,114,0.98); flex-direction: column; padding: 1rem 0;
+            }
+            .nav-links.active { display: flex; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .about-container { grid-template-columns: 1fr; gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-file-signature"></i> Mihir Prajapati Notary
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobileMenu"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Certified Notary Services</h1>
+            <p class="subtitle">Affidavit • Dastavej • Power of Attorney<br>
+                Mihir Prajapati working under Advocate Amit Prajapati</p>
+            <a href="#contact" class="cta-button">Call Now: 8780993628</a>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-file-signature"></i></div>
+                <h3>Notary Attestation</h3>
+                <p>Government certified notary for all legal documents, agreements & certifications</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-gavel"></i></div>
+                <h3>Affidavit Services</h3>
+                <p>Professional affidavits for court, NOC, declarations & legal declarations</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-file-contract"></i></div>
+                <h3>Dastavej & POA</h3>
+                <p>Power of Attorney, partnership deeds, property documents & agreements</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-file-alt"></i></div>
+                <h3>True Copy</h3>
+                <p>Certified true copies, document attestation for official submissions</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Document Verification</h3>
+                <p>Legal verification & authentication under advocate supervision</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-clock"></i></div>
+                <h3>Express Service</h3>
+                <p>Same day urgent document processing available</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>Reliable Notary Services in Himmatnagar</h2>
+                <p>Mihir Prajapati provides professional notary and document services under the supervision of Advocate Amit Prajapati. All documents are government registered and legally compliant.</p>
+                <p>We serve Himmatnagar and entire Sabarkantha district with fast, accurate and confidential document services.</p>
+                <ul style="margin-top: 1.5rem; padding-left: 1.5rem; color: #666;">
+                    <li><i class="fas fa-check-circle" style="color: #ffd700;"></i> Government Licensed</li>
+                    <li><i class="fas fa-check-circle" style="color: #ffd700;"></i> Advocate Supervised</li>
+                    <li><i class="fas fa-check-circle" style="color: #ffd700;"></i> Fast Processing</li>
+                    <li><i class="fas fa-check-circle" style="color: #ffd700;"></i> Affordable Rates</li>
+                </ul>
+            </div>
+            <div>
+                <div class="team-card">
+                    <div class="team-name">Mihir Prajapati</div>
+                    <div class="team-role">Notary Services</div>
+                    <p>Working under Advocate Amit Prajapati</p>
+                </div>
+                <div class="team-card" style="margin-top: 1.5rem;">
+                    <div class="team-name">Advocate Amit Prajapati</div>
+                    <div class="team-role">Supervising Advocate</div>
+                    <p>Legal Expert & Mentor</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <h2>Get Your Documents Notarized</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 3rem;">Contact us today for fast service</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <p><strong>8780993628</strong></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>mihirprajapati975@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Address</h4>
+                        <p>07, Sarav Complex<br>Nyay Mandir, Himmatnagar<br>Sabarkantha - 383001</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Timings</h4>
+                        <p>Mon-Sat: 10AM - 7PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" required>
+                </div>
+                <div class="form-group">
+                    <label>Service Needed</label>
+                    <select required>
+                        <option>Notary</option>
+                        <option>Affidavit</option>
+                        <option>Dastavej/POA</option>
+                        <option>True Copy</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea placeholder="Document details..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Request</button>
+            </form>
+        </div>
+    </section
